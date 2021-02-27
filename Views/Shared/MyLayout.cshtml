@@ -1,0 +1,81 @@
+﻿@{
+    Layout = null;
+    string Name = "Название Фирмы";
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>@Name</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" />
+    <link href="~/css/all.min.css" rel="stylesheet" />
+    <link href="~/css/templatemo-style.css" rel="stylesheet" />
+</head>
+<!--
+
+Simple House
+
+https://templatemo.com/tm-539-simple-house
+
+-->
+<body>
+    <div class="container">
+        <!-- Top box -->
+        <!-- Logo & Site Name -->
+        <div class="placeholder">
+            <div class="parallax-window" data-parallax="scroll" data-image-src="../img/header_paralax.jpg">
+                <div class="tm-header">
+                    <div class="row tm-header-inner">
+                        <div class="col-md-6 col-12">
+                            <img src="~/img/simple-house-logo.png" alt="Logo" class="tm-site-logo" />
+                            <div class="tm-site-text-box">
+                                <h1 class="tm-site-title">@Name</h1>
+                                <h6 class="tm-site-description">Короткий слоган, несколько слов</h6>
+                            </div>
+                        </div>
+                        <nav class="col-md-6 col-12 tm-nav">
+                            <ul class="tm-nav-ul">
+                                <li class="tm-nav-li"><a id="home"  asp-area="" asp-controller="Home" asp-action="Index" class="tm-nav-link" onclick="MenuClick('home');">Главная</a></li>
+                                <li class="tm-nav-li"><a id="about"  asp-area="" asp-controller="Home" asp-action="About" class="tm-nav-link" onclick="MenuClick('about');">О нас</a></li>
+                                <li class="tm-nav-li"><a id="contact" asp-area="" asp-controller="Home" asp-action="Contacts" class="tm-nav-link" onclick="MenuClick('contact');">Контакты</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <main>
+            @RenderBody()
+        </main>
+
+        <footer class="tm-footer text-center">
+            <p>
+                Copyright &copy; 2020 @Name
+
+                | Разработка: <a href="https://github.com/VitalDikov">VitalDikov </a>
+            </p>
+        </footer>
+
+
+    </div>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/parallax.min.js"></script>
+
+    <script>
+        function MenuClick(id)
+        {
+            document.getElementByClassName('tm-nav-link active').className = 'tm-nav-link';
+            document.getElementById(id).className = 'tm-nav-link active';
+        }
+
+    </script>
+
+
+</body>
+</html>
