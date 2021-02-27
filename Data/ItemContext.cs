@@ -12,6 +12,8 @@ namespace ECommerce.Data
         : base(options)
         { }
 
-        public DbSet<Item> Items { get; set; }
+        public DbSet<Item> Items1 { get; set; }
+        public DbSet<Item> Items2 { get; set; }
+        public DbSet<Item> Items3 { get; set; }
     }
 }
